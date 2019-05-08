@@ -1,4 +1,27 @@
 {% extends "shop/base.html" %}
 
-{% block title %}Tittle of ProductView {% endblock title %}
-{% block body %}This is body{% endblock body %} 
+{% block title %}{{product.product_name}} {% endblock title %}
+{% block body %}
+
+<div class="container my-4">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="row">
+				<img src="/media/{{product.image}}">
+			</div>
+			<div class="row">
+				<button class="btn btn-primary mx-3">Buy Now </button>
+				<button class="btn btn-primary">Abb to Cart </button>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<h5>{{product.product_name}}</h5>
+			<hr>
+			<p>PRICE : <b> &#2547;{{ product.price}}</b></p>
+			<h5>About {{product.product_name}} here:</h5>
+			<p>{{product.desc}}</p>
+		</div>
+	</div>
+</div>
+
+{% endblock body %} 
